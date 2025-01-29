@@ -1,0 +1,266 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: 0.79em;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    white-space: nowrap;
+
+}
+
+img {
+    position: absolute;
+    right: 0;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -1;
+}
+
+h1 {
+    position: absolute;
+}
+
+#video-div {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    height: 80%;
+    max-height: 700px;
+    color: white;
+    overflow: hidden;
+    display: block;
+    visibility: hidden;
+
+}
+
+#video-div .controls {
+    position: relative;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
+#video-div .controls .controlDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.dropdown {
+    position: relative;
+
+}
+
+.dropdown input {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.dropdown .option {
+    position: absolute;
+    top: 130%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: none;
+    font-size: large;
+    border-radius: 10px;
+    z-index: 99;
+    color: black;
+
+}
+
+.dropdown.active .option {
+    display: block;
+}
+
+
+.dropdown .option div {
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.dropdown .option div:hover {
+    background-color: lightgray;
+}
+
+.dropdown::before {
+    content: '';
+    position: absolute;
+    right: 10%;
+    top: 10px;
+    z-index: 99;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.dropdown.active::before {
+    top: 20px;
+    transform: rotate(-225deg);
+}
+
+.rangeSlider,
+#changeCnvFilter {
+    position: relative;
+    visibility: hidden;
+
+}
+
+.filterParam {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 2px;
+    background: #111;
+
+}
+
+.filterParam::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #00bcd4;
+}
+
+.ascii-controls{
+    position: absolute;
+    width: 50%;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#copyText {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #555;
+    color: white;
+    padding: 2% 6%;
+    margin-right: 5% ;
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: medium;
+    z-index: 4;
+
+}
+
+.copyAlert {
+    position: relative;
+}
+
+#changeColor{
+    position: relative;
+    bottom: 4%;
+    z-index: 4;
+
+}
+
+/*https://codepen.io/FlorinPop17/pen/XWWZYYG*/
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 6px;
+	width: 20px;
+    border: 1px solid black;
+    transform: scale(1.3);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 2px;
+	height: 12px;
+	width: 12px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    background-color: black;
+	transform: translateX(14px);
+}
+
+.checkbox:checked + .label {
+    background-color: white;
+}
+
+.rangeValue {
+    position: absolute;
+    right: -20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: black;
+}
+
+.rangeValue::before {
+    content: '';
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background: white;
+}
+
+.changeCnvFilter {
+    position: relative;
+}
+
+#videos-container {
+    margin-bottom: 2%;
+}
+
+canvas {
+    position: relative;
+    width: 100%;
+}
